@@ -1,0 +1,105 @@
+{
+  "name": "Dog",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Dog's name"
+    },
+    "breed": {
+      "type": "string",
+      "description": "Breed or mix"
+    },
+    "age": {
+      "type": "string",
+      "description": "Age (e.g. 2 years, 6 months)"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female"
+      ],
+      "description": "Gender of the dog"
+    },
+    "weight": {
+      "type": "string",
+      "description": "Weight (e.g. 45 lbs)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description and personality"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Main photo URL"
+    },
+    "additional_photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional photo URLs"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Available",
+        "Pending",
+        "Adopted",
+        "Memorial"
+      ],
+      "default": "Available",
+      "description": "Adoption status"
+    },
+    "memorial_note": {
+      "type": "string",
+      "description": "A loving note or memory for the memorial wall"
+    },
+    "spayed_neutered": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the dog is spayed/neutered"
+    },
+    "vaccinated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the dog is vaccinated"
+    },
+    "good_with_kids": {
+      "type": "boolean",
+      "default": false
+    },
+    "good_with_dogs": {
+      "type": "boolean",
+      "default": false
+    },
+    "good_with_cats": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "breed",
+    "status"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

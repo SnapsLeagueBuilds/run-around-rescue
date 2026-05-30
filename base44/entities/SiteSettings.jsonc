@@ -1,0 +1,67 @@
+{
+  "name": "SiteSettings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Setting key (e.g. 'seo', 'analytics')"
+    },
+    "meta_title": {
+      "type": "string",
+      "description": "Page meta title"
+    },
+    "meta_description": {
+      "type": "string",
+      "description": "Page meta description"
+    },
+    "meta_keywords": {
+      "type": "string",
+      "description": "Comma-separated keywords"
+    },
+    "og_title": {
+      "type": "string",
+      "description": "Open Graph title"
+    },
+    "og_description": {
+      "type": "string",
+      "description": "Open Graph description"
+    },
+    "og_image_url": {
+      "type": "string",
+      "description": "Open Graph image URL"
+    },
+    "google_analytics_id": {
+      "type": "string",
+      "description": "Google Analytics Measurement ID (e.g. G-XXXXXXXXXX)"
+    },
+    "google_search_console_verification": {
+      "type": "string",
+      "description": "Google Search Console verification meta content value"
+    },
+    "canonical_url": {
+      "type": "string",
+      "description": "Canonical base URL for the site"
+    }
+  },
+  "required": [
+    "key"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

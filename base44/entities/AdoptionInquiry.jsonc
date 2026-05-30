@@ -1,0 +1,63 @@
+{
+  "name": "AdoptionInquiry",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Inquirer's full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Inquirer's email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Inquirer's phone number"
+    },
+    "dog_name": {
+      "type": "string",
+      "description": "Name of the dog they're inquiring about"
+    },
+    "dog_id": {
+      "type": "string",
+      "description": "ID of the dog"
+    },
+    "message": {
+      "type": "string",
+      "description": "Additional message"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Reviewed",
+        "Contacted",
+        "Closed"
+      ],
+      "default": "New"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "dog_name"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
